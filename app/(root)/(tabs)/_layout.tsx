@@ -1,50 +1,66 @@
+import AntDesign from '@expo/vector-icons/AntDesign';
+import Ionicons from '@expo/vector-icons/Ionicons';
 import { Tabs } from 'expo-router';
-import { Image, ImageSourcePropType, View } from 'react-native';
 
-const TabIcon = ({ source, focused }: { source: ImageSourcePropType; focused: boolean }) => (
-  <View className={`flex flex-row justify-center items-center rounded-full ${focused ? 'bg-primary/10 w-12 h-12' : ''}`}>
-    <Image
-      source={source}
-      className='flex items-center justify-center flex-row'
-    />
-  </View>
-);
 export default function Layout() {
   return (
     <Tabs
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
-          paddingHorizontal: 10,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           flexDirection: 'row',
-          height: 60,
-          borderRadius: 30,
-          marginInline: 15,
-          borderTopLeftRadius: 30,
-          borderTopRightRadius: 30,
-          backgroundColor: '#ffffff',
-          position: 'absolute',
-          bottom: 25,
+          borderTopWidth: 1,
         },
         tabBarItemStyle: {
-          borderRadius: 9999,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           flexDirection: 'row',
-          height: 50,
-          width: 20,
+          padding: 5,
         },
-
-        tabBarShowLabel: false,
+        tabBarActiveTintColor: '#2677b2',
+        tabBarShowLabel: true,
       }}>
       <Tabs.Screen
         name='home'
         options={{
           title: 'Home',
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name='home'
+              size={24}
+              color={color}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name='schedule'
+        options={{
+          title: 'Schedule',
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name='time'
+              size={24}
+              color={color}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name='profile'
+        options={{
+          title: 'Profile',
+          tabBarIcon: ({ color, focused }) => (
+            <AntDesign
+              name='user'
+              size={24}
+              color={color}
+            />
+          ),
         }}
       />
     </Tabs>

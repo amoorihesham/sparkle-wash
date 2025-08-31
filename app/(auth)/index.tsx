@@ -8,7 +8,7 @@ import { OtpInput } from 'react-native-otp-entry';
 const LoginScreen = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState('');
-  const [verificationStatus, setVerificationStatus] = useState('success');
+  const [verificationStatus, setVerificationStatus] = useState('idle');
   const [openVerifyOtpModal, setOpenVerifyOtpModal] = useState(false);
   const [otpCode, setOtpCode] = useState('');
   const [error, setError] = useState('');
