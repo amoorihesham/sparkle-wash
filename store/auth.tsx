@@ -7,7 +7,7 @@ export type AuthStoreType = {
 
 const useAuth = create<AuthStoreType>((set) => ({
   user: { name: 'amr' },
-  isAuthenticated: false,
+  isAuthenticated: true,
 }));
 
 export default useAuth;
