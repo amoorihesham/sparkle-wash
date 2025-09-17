@@ -13,7 +13,6 @@ const LoginScreen = () => {
   const [otpCode, setOtpCode] = useState('');
   const [error, setError] = useState('');
 
-  console.log(verificationStatus);
   const onPressSendOTP = async () => {
     setIsLoading(true);
     try {
